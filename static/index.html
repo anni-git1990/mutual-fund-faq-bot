@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund FAQ Assistant</title>
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <span class="logo-icon">📈</span>
+                <div class="logo-text">
+                    <h1>Mutual Fund FAQ Bot</h1>
+                    <p>Factual Assistant for Groww Target Schemes</p>
+                </div>
+            </div>
+            <!-- Theme Toggle Switch -->
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                <span class="theme-icon-sun">☀️</span>
+                <span class="theme-icon-moon">🌙</span>
+            </button>
+        </header>
+
+        <!-- Main Workspace (Three columns split) -->
+        <main class="app-workspace-split">
+            <!-- Left Side: Chat Sessions History -->
+            <aside class="history-sidebar">
+                <div class="sidebar-header">
+                    <button class="new-chat-btn" onclick="clearChatHistory()">
+                        <span>+</span> New Chat
+                    </button>
+                </div>
+                <div class="history-list-container">
+                    <h4>Current Session</h4>
+                    <div id="history-queries-list" class="history-queries-list">
+                        <div class="no-history-placeholder">No queries sent yet</div>
+                    </div>
+                </div>
+                <div class="sidebar-footer">
+                    <button class="delete-history-btn" onclick="clearChatHistory()" aria-label="Clear Chat History">
+                        🗑️ Clear History
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Center: Chat Panel -->
+            <div class="chat-panel">
+                <!-- Chat Message Window -->
+                <div id="chat-messages" class="chat-messages-container">
+                    <!-- Initial suggestions screen (hidden when first message is appended) -->
+                    <div id="welcome-container" class="welcome-container">
+                        <div class="welcome-heading">
+                            <h2>Hello! How can I help you today?</h2>
+                            <p>Ask factual questions about exit loads, expense ratios, AUM, benchmarks, and fund managers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area inside the chat panel -->
+                <footer class="app-input-footer">
+                    <form id="chat-form" class="chat-form">
+                        <input 
+                            type="text" 
+                            id="user-input" 
+                            placeholder="Type your mutual fund question here..." 
+                            autocomplete="off" 
+                            required
+                        />
+                        <button type="submit" class="send-btn" aria-label="Send Message">
+                            <svg viewBox="0 0 24 24" width="24" height="24" class="send-svg">
+                                <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <!-- Sticky Bottom Disclaimer -->
+                    <div class="compliance-disclaimer" style="text-align: center; font-weight: 600;">
+                        <span>Facts-only. No investment advice.</span>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- Right Side: FAQ Sidebar -->
+            <aside class="faq-sidebar">
+                <div class="sidebar-header">
+                    <h3>Frequently Asked Questions</h3>
+                    <p>Select any card below to ask instantly:</p>
+                </div>
+                <div class="sidebar-cards-list">
+                    <div class="suggestion-card" onclick="selectSuggestion('What is the expense ratio of Nippon India Large Cap?')">
+                        <span class="card-icon">📊</span>
+                        <div class="card-text">
+                            <h3>Expense Ratio</h3>
+                            <p class="card-desc">What is the expense ratio of Nippon India Large Cap?</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="selectSuggestion('What is the lock-in period for ELSS?')">
+                        <span class="card-icon">🔒</span>
+                        <div class="card-text">
+                            <h3>ELSS Lock-in</h3>
+                            <p class="card-desc">What is the lock-in period for ELSS?</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="selectSuggestion('What is the minimum SIP of Groww Nifty Total Market Index Fund?')">
+                        <span class="card-icon">💰</span>
+                        <div class="card-text">
+                            <h3>Minimum SIP</h3>
+                            <p class="card-desc">What is the minimum SIP of Groww Nifty Total Market Index Fund?</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="selectSuggestion('What is the exit load of HDFC Nifty 50?')">
+                        <span class="card-icon">💸</span>
+                        <div class="card-text">
+                            <h3>Exit Load</h3>
+                            <p class="card-desc">What is the exit load of HDFC Nifty 50?</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="selectSuggestion('What is the risk level and benchmark of ICICI Prudential Nifty Index Fund?')">
+                        <span class="card-icon">📈</span>
+                        <div class="card-text">
+                            <h3>Riskometer & Benchmark</h3>
+                            <p class="card-desc">What is the risk level and benchmark of ICICI Prudential Nifty Index Fund?</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="selectSuggestion('How to download capital-gains statement?')">
+                        <span class="card-icon">📑</span>
+                        <div class="card-text">
+                            <h3>Capital Gains Statement</h3>
+                            <p class="card-desc">How to download capital-gains statement?</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+name: Daily Mutual Fund Data Ingestion
+
+on:
+  schedule:
+    # Run once daily at 5:00 AM UTC (10:30 AM IST)
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub Actions UI
+
+jobs:
+  ingest:
+    name: Run Ingestion & Rebuild Index
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Ingestion Pipeline
+        run: |
+          python -m src.ingestion.run
+
+      - name: Commit and Push database changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated daily corpus ingestion update" && git push)

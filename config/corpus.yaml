@@ -1,0 +1,64 @@
+schemes:
+  - name: "Nippon India Large Cap Fund Direct Growth"
+    slug: "nippon-india-large-cap-fund-direct-growth"
+    category: "Equity - Large Cap"
+    source_url: "https://groww.in/mutual-funds/nippon-india-large-cap-fund-direct-growth"
+    aliases:
+      - "Nippon India Large Cap"
+      - "Nippon Large Cap"
+      - "Nippon"
+
+  - name: "ICICI Prudential Nifty Next 50 Index Fund Direct Growth"
+    slug: "icici-prudential-nifty-next-50-index-fund-direct-growth"
+    category: "Equity - Index Fund"
+    source_url: "https://groww.in/mutual-funds/icici-prudential-nifty-next-50-index-fund-direct-growth"
+    aliases:
+      - "ICICI Prudential Nifty Next 50"
+      - "ICICI Nifty Next 50"
+      - "Nifty Next 50"
+
+  - name: "HDFC Nifty 50 Index Fund Direct Growth"
+    slug: "hdfc-nifty-50-index-fund-direct-growth"
+    category: "Equity - Index Fund"
+    source_url: "https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth"
+    aliases:
+      - "HDFC Nifty 50"
+      - "HDFC Nifty Index"
+      - "HDFC Nifty"
+
+  - name: "Groww Nifty Total Market Index Fund Direct Growth"
+    slug: "groww-nifty-total-market-index-fund-direct-growth"
+    category: "Equity - Index Fund"
+    source_url: "https://groww.in/mutual-funds/groww-nifty-total-market-index-fund-direct-growth"
+    aliases:
+      - "Groww Nifty Total Market"
+      - "Groww Total Market"
+      - "Groww Nifty"
+
+  - name: "ICICI Prudential Nifty Index Fund Direct Growth"
+    slug: "icici-prudential-nifty-index-fund-direct-growth"
+    category: "Equity - Index Fund"
+    source_url: "https://groww.in/mutual-funds/icici-prudential-nifty-index-fund-direct-growth"
+    aliases:
+      - "ICICI Prudential Nifty Index"
+      - "ICICI Nifty Index"
+      - "ICICI Nifty"
+
+  - name: "Groww Platform"
+    slug: "groww-platform"
+    category: "Platform"
+    source_url: "https://groww.in/help/mutual-funds/reports-and-statements/how-to-download-capital-gains-statement"
+    aliases:
+      - "capital gains statement"
+      - "capital-gains statement"
+      - "capital gains report"
+      - "capital gains"
+      - "download statement"
+      - "mutual fund statement"
+      - "available funds"
+      - "supported schemes"
+      - "list mutual funds"
+      - "available mutual funds"
+      - "supported mutual funds"
+      - "what funds"
+      - "list of funds"
