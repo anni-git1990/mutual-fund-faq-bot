@@ -135,7 +135,7 @@ def process_query(user_query):
                 st.markdown(ans)
             return
             
-        context_text = "\n\n".join([r["content"] for r in results])
+        context_text = "\n\n".join([r["text"] for r in results])
         primary_url = results[0]["metadata"].get("source_url", "https://groww.in")
         last_updated = results[0]["metadata"].get("last_updated", current_date)
         
