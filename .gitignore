@@ -19,7 +19,6 @@ ENV/
 # Data and vector database indices
 data/raw/*
 data/processed/*
-data/index/*
 
 # IDE configs
 .vscode/
