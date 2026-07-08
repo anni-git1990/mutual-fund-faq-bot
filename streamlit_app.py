@@ -127,7 +127,7 @@ def process_query(user_query):
         return
         
     with st.spinner("Retrieving facts..."):
-        results = retriever.retrieve(user_query, k=3)
+        results = retriever.retrieve(user_query, limit=3)
         if not results:
             ans = "I could not retrieve any factual information for this query. Please check the scope."
             st.session_state.messages.append({"role": "assistant", "content": ans})
