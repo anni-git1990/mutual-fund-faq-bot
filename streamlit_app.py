@@ -12,7 +12,73 @@ st.set_page_config(
     page_title="Mutual Fund FAQ Assistant",
     page_icon="📈",
     layout="wide",
-)
+
+# Custom CSS for premium dark-mode styling matching the local UI
+st.markdown("""
+<style>
+    /* Dark background settings */
+    .stApp {
+        background-color: #0b111e;
+        color: #f3f4f6;
+    }
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background-color: #111a2e;
+        border-right: 1px solid #1f2937;
+    }
+    
+    /* Title coloring */
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff !important;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* Sidebar Suggestion Cards */
+    div.row-widget.stButton > button {
+        background-color: #1a233a;
+        color: #e5e7eb;
+        border: 1px solid #1f2937;
+        border-radius: 12px;
+        text-align: left;
+        padding: 10px 14px;
+        transition: all 0.2s ease;
+        white-space: normal;
+        word-wrap: break-word;
+        font-size: 13px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    
+    div.row-widget.stButton > button:hover {
+        background-color: #24304f;
+        border-color: #00d293; /* Emerald green highlight */
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 210, 147, 0.15);
+    }
+    
+    /* Input box styling */
+    [data-testid="stChatInput"] {
+        border-radius: 16px;
+        border: 1px solid #1f2937;
+        background-color: #111a2e;
+    }
+    
+    /* User chat bubble */
+    [data-testid="chatAvatarIcon-user"] {
+        background-color: #00d293;
+    }
+    
+    /* Assistant chat bubble */
+    [data-testid="chatAvatarIcon-assistant"] {
+        background-color: #1f2937;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 # App Title
 st.title("📈 Mutual Fund FAQ Assistant")
