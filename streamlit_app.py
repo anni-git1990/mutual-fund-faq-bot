@@ -12,6 +12,7 @@ st.set_page_config(
     page_title="Mutual Fund FAQ Assistant",
     page_icon="📈",
     layout="wide",
+)
 
 # Custom CSS for premium dark-mode styling matching the local UI
 st.markdown("""
